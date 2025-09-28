@@ -5,9 +5,9 @@
 # Developed and owned by Soferio Pty Limited.
 ###
 
-# Time limit in seconds (e.g., 1800 for half an hour)
-TIME_LIMIT=1800
-WEEKEND_TIME_LIMIT=3600
+# Time limit in seconds (e.g., 10800 for three hours)
+TIME_LIMIT=10800
+WEEKEND_TIME_LIMIT=108000  # 3 hours on weekends
 DISPLAY_5_MIN_WARNING=true
 DISPLAY_1_MIN_WARNING=true
 
