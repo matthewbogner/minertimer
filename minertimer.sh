@@ -53,14 +53,14 @@ while true; do
         if ((TOTAL_PLAYED_TIME >= current_limit)); then
             echo $MINECRAFT_PIDS | xargs kill
             echo "Minecraft has been closed after reaching the daily time limit."
-            osascript -e 'display notification "Minecraft time expired" with title "Minecraft Closed"'
+            osascript -e 'display dialog "Minecraft time expired" with title "Minecraft Closed"' &
             afplay /System/Library/Sounds/Glass.aiff 
         elif ((TOTAL_PLAYED_TIME >= current_limit - 300)) && [ "$DISPLAY_5_MIN_WARNING" = true ]; then
-            osascript -e 'display notification "Minecraft will exit in 5 minutes" with title "Minecraft Time Expiring Soon"'
+            osascript -e 'display dialog "Minecraft will exit in 5 minutes" with title "Minecraft Time Expiring Soon"' &
             say "Minecraft time will expire in 5 minutes"
             DISPLAY_5_MIN_WARNING=false
         elif ((TOTAL_PLAYED_TIME >= current_limit - 60)) && [ "$DISPLAY_1_MIN_WARNING" = true ]; then
-            osascript -e 'display notification "Minecraft will exit in 1 minute" with title "Minecraft Time Expiring"'
+            osascript -e 'display dialog "Minecraft will exit in 1 minute" with title "Minecraft Time Expiring"' &
             say "Minecraft time will expire in 1 minute"
             DISPLAY_1_MIN_WARNING=false
         fi
